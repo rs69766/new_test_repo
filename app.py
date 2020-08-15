@@ -15,10 +15,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # supress default SQL alche
 app.secret_key = 'flaskecommercesecretkey' # secret key
 api = Api(app)# createing an instance of app
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 app.config['JWT_AUTH_URL_RULE'] = '/login'# change default  /auth point to /login
 app.config['JWT_EXPIRATION_DELTA'] = timedelta(seconds=3600)
 jwt = JWT(app,authenticate , identity)# creating instanmce of JWT , this will also create /auth end point
