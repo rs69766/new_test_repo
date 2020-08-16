@@ -12,7 +12,7 @@ from resources.category import Category , Categories
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///data.db')
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('sqlite:///data.db')
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # supress default SQL alchemy modification tracker and let flask sql alchemy tracker track the changes
 app.secret_key = 'flaskecommercesecretkey' # secret key
 api = Api(app)# createing an instance of app
