@@ -1,8 +1,8 @@
 from werkzeug.security import safe_str_cmp
 from models.user import UserModel
 
-def authenticate(username , password):
-    user = UserModel.find_by_username(username) # get function can be applied to dict , it behaves same as getting the value from key
+def authenticate(email , password):
+    user = UserModel.find_by_email(email) # get function can be applied to dict , it behaves same as getting the value from key
     if user and safe_str_cmp(user.password , password):
         return user
 
